@@ -1,0 +1,15 @@
+body{
+    zoom: 80%;
+}
+.layout-menu{
+    height: auto;
+}
+.modal-backdrop{
+    width: auto;
+    height: auto;
+}
+.offcanvas-backdrop{
+    width: auto;
+    height: auto;
+
+}
