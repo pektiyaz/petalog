@@ -7,6 +7,9 @@ PetaLog is a powerful log and exception aggregation tool designed specifically f
 - Laravel Framework (10.10)
 - Moonshine Admin (https://moonshine-laravel.com/)
 
+# Drivers
+- [Laravel Driver](https://github.com/pektiyaz/petalog-laravel.git)
+
 # Features
 - Exception Aggregation: PetaLog captures exceptions thrown by your Laravel application and aggregates them in one centralized location for easy analysis.
 
