@@ -12,6 +12,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Project;
 
 use Illuminate\Support\Str;
+use MoonShine\ActionButtons\ActionButton;
+use MoonShine\Fields\Date;
 use MoonShine\Fields\Hidden;
 use MoonShine\Fields\Relationships\BelongsTo;
 use MoonShine\Fields\Text;
@@ -44,14 +46,19 @@ class ProjectResource extends ModelResource
                 Text::make('Name'),
                 Text::make('Description'),
                 Text::make('DSN', '', fn($item) =>
-                    'PEGALOG_ID=' . $item->id
+                    'PETALOG_URL=' . config('app.url').'/api/log<br>'.
+                    'PETALOG_ID=' . $item->id
                     )->hideOnForm(),
 
             ]),
         ];
     }
 
-
+    public function buttons(): array {
+        return [
+          ActionButton::make('Clear', url:  fn($item) => '/project/clear/' . $item->id)->withConfirm()
+        ];
+    }
 
     public function rules(Model $item): array
     {

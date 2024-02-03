@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Log;
+use App\Observers\LogObserver;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -21,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Schema::defaultStringLength(191);
-
+        Log::observe(LogObserver::class);
         moonShineAssets()->add([
             '/moonshine.css'
         ]);
