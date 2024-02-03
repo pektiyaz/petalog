@@ -34,12 +34,13 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
     protected function menu(): array
     {
         return [
-            MenuItem::make('Teams', new TeamResource()),
-            MenuItem::make('Projects', new ProjectResource()),
+            MenuItem::make('Teams', new TeamResource())->icon('heroicons.user-group'),
+            MenuItem::make('Projects', new ProjectResource())->icon('heroicons.cpu-chip'),
             MenuItem::make('Logs', new LogResource())->badge(function(){
                 return Log::where('sloved', false)->count();
-            }),
-            MenuItem::make('Users', new UserResource()),
+            })->icon('heroicons.exclamation-triangle'),
+            MenuItem::make('Users', new UserResource())->icon('heroicons.user'),
+            MenuItem::make('Logout', '/logout')->icon('heroicons.power'),
 
             MenuGroup::make('Hidden', [
                 MenuItem::make('User', new TeamMemberResource()),
