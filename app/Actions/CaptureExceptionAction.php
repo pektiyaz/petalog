@@ -8,6 +8,8 @@ use App\Models\Log;
 class CaptureExceptionAction
 {
     public function execute(ExceptionDTO $exception){
-        Log::insert($exception->toArray());
+        $data = $exception->toArray();
+        $data['created_at'] = now();
+        Log::insert($data);
     }
 }
