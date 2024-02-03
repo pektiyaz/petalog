@@ -43,8 +43,8 @@ class ProjectResource extends ModelResource
             Block::make([
                 ID::make()->sortable(),
                 BelongsTo::make('Team', 'team', fn($item) => $item->name),
-                Text::make('Name'),
-                Text::make('Description'),
+                Text::make('Name')->required(),
+                Text::make('Description')->default('App')->required(),
                 Text::make('DSN', '', fn($item) =>
                     'PETALOG_URL=' . config('app.url').'/api/log<br>'.
                     'PETALOG_ID=' . $item->id
