@@ -27,6 +27,6 @@ class AppServiceProvider extends ServiceProvider
             '/moonshine.css'
         ]);
 
-        \URL::forceScheme('https');
+        $this->app['request']->server->set('HTTPS', $this->app->environment() != 'local');
     }
 }
