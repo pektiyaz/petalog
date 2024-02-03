@@ -28,5 +28,9 @@ class AppServiceProvider extends ServiceProvider
             '/moonshine.css'
         ]);
 
+        if($this->app->environment('production')) {
+            \URL::forceScheme('https');
+        }
+
     }
 }
