@@ -13,6 +13,9 @@ use App\Models\Log;
 
 use MoonShine\ActionButtons\ActionButton;
 use MoonShine\Enums\ClickAction;
+use MoonShine\Fields\Date;
+use MoonShine\Fields\DateRange;
+use MoonShine\Fields\Enum;
 use MoonShine\Fields\Relationships\BelongsTo;
 use MoonShine\Fields\Text;
 use MoonShine\Pages\Crud\FormPage;
@@ -92,6 +95,27 @@ class LogResource extends ModelResource
                 label: 'Sloved',
                 url: fn($item) => '/log/slove/'.$item->id
             ),
+        ];
+    }
+    public function filters(): array {
+        return [
+                Enum::make('Level', 'level')->options([
+                    '' => 'Unselected',
+                    'debug' => 'Debug',
+                    'info' => 'Info',
+                    'warning' => 'Warning',
+                    'error' => 'Error'
+                ]),
+                Enum::make('Environment', 'environment')->options([
+                    '' => 'Unselected',
+                    'local' => 'Local',
+                    'production' => 'Production'
+                ]),
+                Enum::make('Type', 'type')->options([
+                    '' => 'Unselected',
+                    'log' => 'Log',
+                    'exception' => 'Exception']),
+                DateRange::make('created_at'),
         ];
     }
 

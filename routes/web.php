@@ -3,6 +3,7 @@
 use App\Http\Controllers\DebugController;
 use App\Http\Controllers\ListenerController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/log/slove/{id}', [LogController::class, 'slove']);
+Route::post('/project/clear/{project}', [ProjectController::class, 'clear']);

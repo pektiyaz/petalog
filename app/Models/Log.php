@@ -13,6 +13,7 @@ class Log extends Model
     public $head = [];
     public $typeData = [];
     public $data = [];
+    protected $guarded = [];
 
     public function project(): BelongsTo{
         return $this->belongsTo(Project::class);
