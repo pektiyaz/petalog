@@ -2058,12 +2058,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ko7ov-Konstantin/jwt.git",
-                "reference": "39d148d88a8303ff3ec2392b35b7d83f6f81e864"
+                "reference": "e02324ace2fc073813627febc037a70fecd954fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ko7ov-Konstantin/jwt/zipball/39d148d88a8303ff3ec2392b35b7d83f6f81e864",
-                "reference": "39d148d88a8303ff3ec2392b35b7d83f6f81e864",
+                "url": "https://api.github.com/repos/Ko7ov-Konstantin/jwt/zipball/e02324ace2fc073813627febc037a70fecd954fa",
+                "reference": "e02324ace2fc073813627febc037a70fecd954fa",
                 "shasum": ""
             },
             "require": {
@@ -2103,7 +2103,7 @@
                 "issues": "https://github.com/Ko7ov-Konstantin/jwt/issues",
                 "source": "https://github.com/Ko7ov-Konstantin/jwt/tree/1.0.3"
             },
-            "time": "2024-03-21T19:20:51+00:00"
+            "time": "2024-03-21T20:13:29+00:00"
         },
         {
             "name": "laravel/framework",
