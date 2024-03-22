@@ -6,11 +6,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
+use Konstantinkotov\jwt\Traits\JWTModelTrait;
 use Laravel\Sanctum\HasApiTokens;
 use MoonShine\Models\MoonshineUser;
 
 class User extends MoonshineUser
 {
-    protected $table = 'moonshine_users';
+    use JWTModelTrait;
 
+    protected $table = 'moonshine_users';
 }
